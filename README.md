@@ -4,7 +4,7 @@ A helpful Wordpress plugin that automatically adds a helpful popup to any Bible 
 ![image](https://github.com/jtgraham38/BibleBuddy/assets/88167136/c0325090-f01e-4a57-af69-fc4cd61250f7) <br />
 
 **Setup and Configuration** <br />
-![image](https://github.com/jtgraham38/BibleBuddy/assets/88167136/a6199348-0c93-4861-b272-6316a0ac3668)
+![image](https://github.com/jtgraham38/BibleBuddy/assets/88167136/a6199348-0c93-4861-b272-6316a0ac3668) <br />
 This plugin adds a pop-up to all posts on your blog that contain a _verse reference_.  A _verse reference_ is a simple set of characters that meet a format specified in the plugin settings page.  The _verse reference_
 will contain three special tokens: 
 - '\B' = book of the Bible
