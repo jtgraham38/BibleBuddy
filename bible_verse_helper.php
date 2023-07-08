@@ -120,7 +120,7 @@ class Bible_Buddy
                                 $regex .= $books_impl;
                                 break;
                             case 'C':
-                                $regex .= '(\d+-\d+|\d+)';
+                                $regex .= '(\d+)';
                                 if (!$found_num){
                                     $found_num = true;
                                 }
