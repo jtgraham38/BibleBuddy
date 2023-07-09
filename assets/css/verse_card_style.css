@@ -24,6 +24,20 @@
     --light-text: #202020;
 }
 /* declare styles */
+/* link color style */
+.hover_card.verse_theme-traditional>.verse_content>.verse_footer>.bb_link{
+    color: var(--traditional-text);
+}
+.hover_card.verse_theme-cool>.verse_content>.verse_footer>.bb_link{
+    color: var(--cool-text);
+}
+.hover_card.verse_theme-light>.verse_content>.verse_footer>.bb_link{
+    color: var(--light-text);
+}
+.hover_card.verse_theme-dark>.verse_content>.verse_footer>.bb_link{
+    color: var(--dark-text);
+}
+/* link color style */
 /* trigger style */
 .verse_card_trigger{
     border-bottom: 0.5px dotted;

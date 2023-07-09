@@ -26,7 +26,7 @@ if (!defined('ABSPATH')) {
 
         <div class="verse_footer">
             <p class="verse_footer_text"></p>
-            <a href="https://github.com/jtgraham38/BibleBuddy/tree/main" target="_blank">Bible Buddy</a>
+            <a class="bb_link" href="https://github.com/jtgraham38/BibleBuddy/tree/main" target="_blank">Bible Buddy</a>
         </div>
     </div>
     <div class="hover_card_arrow" data-popper-arrow></div>
