@@ -1,6 +1,6 @@
 === Bible Buddy ===
 Contributors: jtgraham38
-Donate link: https://www.paypal.com/donate?token=H4r-2z2I2p-76k9n6dWm6zF1H8_DKPUIIne_6g1mwe72rTGpmx4ULSD8a5p_JHog70czN-MyDcGlJ2WM
+Donate link: https://jacob-t-graham.com/donate/
 Tags: bible-buddy, bible, christian, theology, kjv, vulgate
 Requires at least: 4.7
 Tested up to: 6.2.2
@@ -38,6 +38,10 @@ the post.
 
 = Are multiple verse formats supported? =
 No, at this time, only one site-wide verse format is supported.
+
+= What 3rd-party services does this app use? =
+This app makes use of a small Bible api service to populate the verse card with the correct Bible verses, based on the verse reference typed.  It contains several
+different translations of the Bible, however, all are not currently supported.  Learn more about this service here: https://bible-api.com/
 
 == Changelog ==
 = 1.0 =
