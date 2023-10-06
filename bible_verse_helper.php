@@ -46,8 +46,8 @@ class Bible_Buddy
             if (preg_match($this->verse_regex()['regex'], get_the_content($post->ID))) {
                 wp_enqueue_style( 'verse_card_style', plugin_dir_url(__FILE__) . 'assets/css/verse_card_style.css');
 
-                wp_register_script('popperjs', 'https://unpkg.com/@popperjs/core@2.11.8/dist/umd/popper.min.js', array(), '2.11.8', true);
-                wp_enqueue_script('popperjs');
+                wp_enqueue_script('popperjs', plugin_dir_url(__FILE__) . 'assets/js/popper.min.js');
+                
                 wp_enqueue_script('verse_card', plugin_dir_url(__FILE__) . 'assets/js/verse_card_autoposition.js', array('popperjs'), '', true);
                 wp_enqueue_script('verse_functions', plugin_dir_url(__FILE__) . 'assets/js/verse_functions.js', array('verse_card'), '', true);
                 
