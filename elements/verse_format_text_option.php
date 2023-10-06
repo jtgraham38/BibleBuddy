@@ -9,9 +9,9 @@ if (!defined('ABSPATH')) {
     <input type="text" name="format" value="<?php echo esc_attr(get_option('format')) ?>" />
     <span class="tooltiptext">
         <ul>
-            <li>\B = Book of the Bible</li>
-            <li>\C = Chapter of the book</li>
-            <li>\V = Verse in that book</li>
+            <li>\B = Book of the Bible.</li>
+            <li>\C = Chapter of that book.</li>
+            <li>\V = Verse(s) in that chapter.</li>
         </ul>
     </span>
 </div>
