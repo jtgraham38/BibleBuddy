@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
 ?>
 
 <div class="tooltip">
-    <input type="text" name="format" value="<?= esc_attr(get_option('format')) ?>" />
+    <input type="text" name="format" value="<?php echo esc_attr(get_option('format')) ?>" />
     <span class="tooltiptext">
         <ul>
             <li>\B = Book of the Bible</li>
