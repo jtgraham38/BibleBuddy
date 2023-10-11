@@ -205,12 +205,22 @@ class Bible_Buddy
             'bible_buddy_settings'
         );
 
+        add_settings_field(
+            'bible_buddy_credit_link',
+            'Display Credit Link:',
+            function(){
+                require_once plugin_dir_path(__FILE__) . 'elements/display_credit_link_option.php';
+            },
+            'bible-buddy-settings',
+            'bible_buddy_settings'
+        );
+
         // create the settings themselves
         register_setting(
             'bible_buddy_settings',
             'theme',
             array(
-                'traditional'
+                'default' => 'traditional'
             )
         );
 
@@ -218,7 +228,15 @@ class Bible_Buddy
             'bible_buddy_settings',
             'format',
             array(
-                'B C:V'
+                'default' => '\B \C:\V'
+            )
+        );
+
+        register_setting(
+            'bible_buddy_settings',
+            'display_credit_link',
+            array(
+                'default' => false
             )
         );
     }
