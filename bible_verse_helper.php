@@ -74,8 +74,13 @@ class Bible_Buddy
             //use the regex to wrap the verse references in the appropriate markup
             $body = preg_replace_callback($regex, function($refs) use ($books_impl, $chapter_idx, $verse_idx){
                 
+                //ensure no values are undefined
+                $book = (isset($refs[1])) ? $refs[1] : "Genesis";
+                $chapter = (isset($refs[$chapter_idx])) ? $refs[$chapter_idx] : 1;
+                $verse = (isset($refs[$verse_idx])) ? $refs[$verse_idx] : 1;
+
                 //surround each reference in a trigger span
-                return '<span class="verse_card_trigger" data-b_book="' . $refs[1] . '" data-b_chapter="' . $refs[$chapter_idx] . '" data-b_verse="' . $refs[$verse_idx]. '">' . $refs[0] . '</span>';
+                return '<span class="verse_card_trigger" data-b_book="' . $book . '" data-b_chapter="' . $chapter . '" data-b_verse="' . $verse. '">' . $refs[0] . '</span>';
             }, $body);
 
         }
