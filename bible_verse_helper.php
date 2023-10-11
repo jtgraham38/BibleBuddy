@@ -93,8 +93,11 @@ class Bible_Buddy
     {
         if (is_single() && in_the_loop() && is_main_query()){
             if (preg_match($this->verse_regex()['regex'], $body)){
-                $verse_card_html = file_get_contents( plugin_dir_path( __FILE__ ) . 'elements/verse_card.php' );
-                $verse_card_html = preg_replace('/123THEME456/u', esc_attr(get_option('theme', 'traditional')), $verse_card_html);
+                //$verse_card_html = file_get_contents( plugin_dir_path( __FILE__ ) . 'elements/verse_card.php' );
+                $verse_card_html = plugin_dir_path( __FILE__ ) . 'elements/verse_card.php';
+                ob_start();
+                include $verse_card_html;
+                $verse_card_html = ob_get_clean();
                 $body .= $verse_card_html;
             }
         }

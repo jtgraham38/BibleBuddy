@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<div class="hover_card verse_theme-123THEME456">
+<div class="hover_card verse_theme-<?php echo esc_attr(get_option('theme', 'traditional')) ?>">
     <div class="verse_content">
 
         <div class="verse_header">
@@ -26,7 +26,9 @@ if (!defined('ABSPATH')) {
 
         <div class="verse_footer">
             <p class="verse_footer_text"></p>
-            <a class="bb_link" href="https://github.com/jtgraham38/BibleBuddy/tree/main" target="_blank">Bible Buddy</a>
+            <?php if (esc_attr(get_option('display_credit_link'))) { ?>
+                <a class="bb_link" href="https://jacob-t-graham.com" target="_blank">JG</a>
+            <?php } ?>
         </div>
     </div>
     <div class="hover_card_arrow" data-popper-arrow></div>
