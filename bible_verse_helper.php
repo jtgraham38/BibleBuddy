@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Bible Buddy
-Plugin URI: https://jacob-t-graham.com/projects
+Plugin URI: https://wordpress.org/plugins/bible-buddy/
 Description: This plugin automatically displays a helpful popup next to any Bible verse reference you enter in your posts.
-Version: 1.0.0
+Version: 1.1.0
 Author: Jacob Graham
 Author URI: https://jacob-t-graham.com/
 Text Domain: bible-buddy
