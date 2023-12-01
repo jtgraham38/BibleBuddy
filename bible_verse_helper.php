@@ -41,7 +41,7 @@ class Bible_Buddy
         global $post;
 
         // enqueue the scripts and styles to make the verse card work
-        if (is_single() || is_page()) { // check if it is a post
+        if ((is_single() && get_option('display_card_on_posts', false)) || (is_page() && get_option('display_card_on_pages', false))) { // check if it is a post
             //only include the scripts if a verse format match is found in the post
             if (preg_match($this->verse_regex()['regex'], get_the_content($post->ID))) {
                 wp_enqueue_style( 'verse_card_style', plugin_dir_url(__FILE__) . 'assets/css/verse_card_style.css');
@@ -60,7 +60,8 @@ class Bible_Buddy
     // add verse pop-up links to post bodies
     public function add_verse_triggers($body)
     {
-        if ((is_single() || is_page()) && in_the_loop() && is_main_query()){
+        if (((is_single() && get_option('display_card_on_posts', false)) || (is_page() && get_option('display_card_on_pages', false)))
+             && in_the_loop() && is_main_query()){
             //get the regex and locations of verse and chapter
             $res = $this->verse_regex();
             $regex = $res['regex'];
@@ -91,7 +92,8 @@ class Bible_Buddy
     // add a verse card to the end of post bodies
     public function add_verse_card($body)
     {
-        if ((is_single() || is_page()) && in_the_loop() && is_main_query()){
+        if (((is_single() && get_option('display_card_on_posts', false)) || (is_page() && get_option('display_card_on_pages', false)))
+             && in_the_loop() && is_main_query()){
             if (preg_match($this->verse_regex()['regex'], $body)){
                 //$verse_card_html = file_get_contents( plugin_dir_path( __FILE__ ) . 'elements/verse_card.php' );
                 $verse_card_html = plugin_dir_path( __FILE__ ) . 'elements/verse_card.php';
