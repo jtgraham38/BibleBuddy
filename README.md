@@ -1,7 +1,7 @@
 # BibleBuddy
-A helpful Wordpress plugin that automatically adds a helpful popup to any Bible verses you type in your posts that displays the verse. <br />
+A helpful WordPress plugin that automatically adds a helpful popup to any Bible verses you type in your posts that displays the verse. <br />
 
-Get it on the Wordpress plugin directory: https://wordpress.org/plugins/bible-buddy/
+Get it on the WordPress plugin directory: https://wordpress.org/plugins/bible-buddy/
 
 ![image](https://github.com/jtgraham38/BibleBuddy/assets/88167136/c0325090-f01e-4a57-af69-fc4cd61250f7) <br />
 
