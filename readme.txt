@@ -44,5 +44,7 @@ This app makes use of a small Bible api service to populate the verse card with 
 different translations of the Bible, however, all are not currently supported.  Learn more about this service here: https://bible-api.com/
 
 == Changelog ==
-= 1.0 =
+= 1.0.0 =
 * Plugin released. 
+= 1.1.0 =
+* Support for verse card added to pages in addition to posts. 
