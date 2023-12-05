@@ -8,7 +8,7 @@ Stable tag: 1.0.0
 Requires PHP: 7.0
 License: GNU GENERAL PUBLIC LICENSE, Version 3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
-A helpful Wordpress plugin that automatically adds a helpful popup to any Bible verses you type in your posts that displays the verse.
+A helpful WordPress plugin that automatically adds a helpful popup to any Bible verses you type in your posts that displays the verse.
 
 == Description ==
 This plugin helps theologians, churches, and any online authors who want to share God's word in their posts do so in a more concise, user-friedly way.
