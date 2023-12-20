@@ -4,7 +4,7 @@ Donate link: https://jacob-t-graham.com/donate/
 Tags: bible-buddy, bible, christian, theology, kjv, vulgate
 Requires at least: 4.7
 Tested up to: 6.2.2
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 Requires PHP: 7.0
 License: GNU GENERAL PUBLIC LICENSE, Version 3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
