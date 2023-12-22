@@ -80,6 +80,9 @@ class Bible_Buddy
                 $chapter = (isset($refs[$chapter_idx])) ? $refs[$chapter_idx] : 1;
                 $verse = (isset($refs[$verse_idx])) ? $refs[$verse_idx] : 1;
 
+                //replace dash-like characters in the verse string with the dash character
+                $verse = str_replace("–", "-", $verse);
+
                 //surround each reference in a trigger span
                 return '<span class="verse_card_trigger" data-b_book="' . $book . '" data-b_chapter="' . $chapter . '" data-b_verse="' . $verse. '">' . $refs[0] . '</span>';
             }, $body);
