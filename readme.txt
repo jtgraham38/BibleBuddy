@@ -3,8 +3,8 @@ Contributors: jtgraham38
 Donate link: https://jacob-t-graham.com/donate/
 Tags: bible-buddy, bible, christian, theology, kjv, vulgate
 Requires at least: 4.7
-Tested up to: 6.2.2
-Stable tag: 1.1.0
+Tested up to: 6.4.2
+Stable tag: 1.1.1
 Requires PHP: 7.0
 License: GNU GENERAL PUBLIC LICENSE, Version 3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -48,3 +48,5 @@ different translations of the Bible, however, all are not currently supported.  
 * Plugin released. 
 = 1.1.0 =
 * Support for verse card added to pages in addition to posts. 
+= 1.1.1 =
+* Support for verse numbers separated by either the hyphen or the en dash.
