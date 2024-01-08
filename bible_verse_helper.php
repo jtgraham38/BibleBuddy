@@ -3,7 +3,7 @@
 Plugin Name: Bible Buddy
 Plugin URI: https://wordpress.org/plugins/bible-buddy/
 Description: This plugin automatically displays a helpful popup next to any Bible verse reference you enter in your posts.
-Version: 1.1.1
+Version: 1.1.2
 Author: Jacob Graham
 Author URI: https://jacob-t-graham.com/
 Text Domain: bible-buddy
@@ -60,32 +60,35 @@ class Bible_Buddy
     // add verse pop-up links to post bodies
     public function add_verse_triggers($body)
     {
-        if (((is_single() && get_option('display_card_on_posts', false)) || (is_page() && get_option('display_card_on_pages', false)))
-             && in_the_loop() && is_main_query()){
-            //get the regex and locations of verse and chapter
-            $res = $this->verse_regex();
-            $regex = $res['regex'];
-            $chapter_idx = $res['chapter_idx'];
-            $verse_idx = $res['verse_idx'];
+        if (
+            ((is_single() && get_option('display_card_on_posts', false)) || (is_page() && get_option('display_card_on_pages', false)))
+            && is_main_query()){
+            if (preg_match($this->verse_regex()['regex'], $body)){
+                //get the regex and locations of verse and chapter
+                $res = $this->verse_regex();
+                $regex = $res['regex'];
+                $chapter_idx = $res['chapter_idx'];
+                $verse_idx = $res['verse_idx'];
 
-            // books of bible
-            $books = ["Genesis","Exodus", "Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Solomon","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi","Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation"];
-            $books_impl = '(' . implode('|', $books) . ')';
+                // books of bible
+                $books = ["Genesis","Exodus", "Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Solomon","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi","Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation"];
+                $books_impl = '(' . implode('|', $books) . ')';
 
-            //use the regex to wrap the verse references in the appropriate markup
-            $body = preg_replace_callback($regex, function($refs) use ($books_impl, $chapter_idx, $verse_idx){
-                
-                //ensure no values are undefined
-                $book = (isset($refs[1])) ? $refs[1] : "Genesis";
-                $chapter = (isset($refs[$chapter_idx])) ? $refs[$chapter_idx] : 1;
-                $verse = (isset($refs[$verse_idx])) ? $refs[$verse_idx] : 1;
+                //use the regex to wrap the verse references in the appropriate markup
+                $body = preg_replace_callback($regex, function($refs) use ($books_impl, $chapter_idx, $verse_idx){
+                    
+                    //ensure no values are undefined
+                    $book = (isset($refs[1])) ? $refs[1] : "Genesis";
+                    $chapter = (isset($refs[$chapter_idx])) ? $refs[$chapter_idx] : 1;
+                    $verse = (isset($refs[$verse_idx])) ? $refs[$verse_idx] : 1;
 
-                //replace dash-like characters in the verse string with the dash character
-                $verse = str_replace("–", "-", $verse);
+                    //replace dash-like characters in the verse string with the dash character
+                    $verse = str_replace("–", "-", $verse);
 
-                //surround each reference in a trigger span
-                return '<span class="verse_card_trigger" data-b_book="' . $book . '" data-b_chapter="' . $chapter . '" data-b_verse="' . $verse. '">' . $refs[0] . '</span>';
-            }, $body);
+                    //surround each reference in a trigger span
+                    return '<span class="verse_card_trigger" data-b_book="' . $book . '" data-b_chapter="' . $chapter . '" data-b_verse="' . $verse. '">' . $refs[0] . '</span>';
+                }, $body);
+            }
 
         }
 
@@ -95,8 +98,9 @@ class Bible_Buddy
     // add a verse card to the end of post bodies
     public function add_verse_card($body)
     {
-        if (((is_single() && get_option('display_card_on_posts', false)) || (is_page() && get_option('display_card_on_pages', false)))
-             && in_the_loop() && is_main_query()){
+        if (
+            ((is_single() && get_option('display_card_on_posts', false)) || (is_page() && get_option('display_card_on_pages', false)))
+            && is_main_query()){
             if (preg_match($this->verse_regex()['regex'], $body)){
                 //$verse_card_html = file_get_contents( plugin_dir_path( __FILE__ ) . 'elements/verse_card.php' );
                 $verse_card_html = plugin_dir_path( __FILE__ ) . 'elements/verse_card.php';

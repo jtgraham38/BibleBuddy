@@ -50,3 +50,5 @@ different translations of the Bible, however, all are not currently supported.  
 * Support for verse card added to pages in addition to posts. 
 = 1.1.1 =
 * Support for verse numbers separated by either the hyphen or the en dash.
+= 1.1.2 =
+* Fixed an issue with the verse card not being added outside the loop.
